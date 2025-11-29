@@ -1,9 +1,9 @@
+/* ===========================
+   GLOBAL THEME
+=========================== */
 :root{
   --bg:#0f1724;
   --card:#0b1220;
-  --accent:#38bdf8;
-  --bar:#60a5fa;
-  --bar-highlight:#f97316;
   --text:#e6eef6;
 }
 
@@ -17,17 +17,136 @@ body{
   flex-direction:column;
   min-height:100vh;
 }
-header{padding:18px 24px;border-bottom:1px solid rgba(255,255,255,0.04)}
-h1{margin:0;font-size:20px}
-main{flex:1;padding:20px}
-.controls{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
-.controls button{padding:8px 12px;border-radius:6px;border:none;background:var(--card);color:var(--text);cursor:pointer}
-.controls input, .controls select{padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)}
 
-.visual{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-#arrayContainer{width:100%;height:320px;display:flex;align-items:flex-end;gap:2px;padding:6px}
-.bar{background:var(--bar);flex:1;border-radius:3px;transition:height 120ms linear,background 120ms linear}
-.bar.small{flex:0.5}
-.bar.highlight{background:var(--bar-highlight)}
-.message{margin-top:10px;color:var(--accent);min-height:18px}
-footer{padding:8px 24px;border-top:1px solid rgba(255,255,255,0.04);font-size:12px}
+header{
+  padding:18px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+h1{ margin:0; font-size:20px; }
+
+main{ flex:1; padding:20px; }
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:12px;
+}
+.controls button{
+  padding:8px 12px;
+  border-radius:6px;
+  border:none;
+  background:var(--card);
+  color:var(--text);
+  cursor:pointer;
+}
+.controls input, .controls select{
+  padding:6px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:transparent;
+  color:var(--text);
+}
+
+.visual{
+  background:rgba(255,255,255,0.03);
+  padding:12px;
+  border-radius:8px;
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+#arrayContainer{
+  width:100%;
+  height:320px;
+  display:flex;
+  align-items:flex-end;
+  gap:3px;
+  padding:6px;
+}
+
+.bar{
+  background:#60a5fa;
+  flex:1;
+  border-radius:3px;
+  transition:all 0.2s ease;
+}
+.bar.small{ flex:0.5; }
+
+.message{
+  margin-top:10px;
+  min-height:20px;
+  color:#38bdf8;
+  font-size:14px;
+}
+
+/* ===========================
+   BUBBLE SORT VISUALIZATION
+=========================== */
+
+/* Compare */
+.bubble-compare{
+  background:#ff3b3b !important;
+  transform:scale(1.2);
+  box-shadow:0 0 15px #ff3b3b;
+}
+
+/* Swap shake */
+.bubble-swap{
+  background:#ff9900 !important;
+  animation:shake 0.18s;
+  transform:scale(1.2);
+}
+
+@keyframes shake{
+  0%{transform: translateX(0)}
+  25%{transform: translateX(-4px)}
+  50%{transform: translateX(4px)}
+  75%{transform: translateX(-3px)}
+  100%{transform: translateX(0)}
+}
+
+/* ===========================
+   MERGE SORT VISUALIZATION
+=========================== */
+
+.merge-left{
+  background:#3b82f6 !important; /* Blue */
+  transform:scale(1.15);
+}
+
+.merge-right{
+  background:#a855f7 !important; /* Purple */
+  transform:scale(1.15);
+}
+
+/* Flash when writing */
+.merge-write{
+  background:white !important;
+  box-shadow:0 0 10px white;
+  transform:scale(1.25);
+}
+
+/* ===========================
+   BINARY SEARCH VISUALIZATION
+=========================== */
+
+.binary-mid{
+  background:red !important;
+  transform:scale(1.35);
+  box-shadow:0 0 16px red;
+}
+
+.binary-found{
+  background:#00ff7f !important;
+  transform:scale(1.35);
+  box-shadow:0 0 16px #00ff7f;
+}
+
+.binary-discarded{
+  background:#444 !important;
+  opacity:0.3;
+}
