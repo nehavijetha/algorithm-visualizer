@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algorithm Visualizer — Sorting & Searching</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Algorithm Visualizer</h1>
+    <p>Bubble Sort • Merge Sort • Binary Search</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div>
+        <label>Array size: <input id="size" type="range" min="5" max="80" value="30"></label>
+        <button id="randomize">Randomize</button>
+      </div>
+
+      <div class="algo-controls">
+        <button id="bubbleBtn">Bubble Sort</button>
+        <button id="mergeBtn">Merge Sort</button>
+        <button id="binaryBtn">Binary Search</button>
+        <input id="searchVal" type="number" placeholder="Search value" style="width:120px;">
+      </div>
+
+      <div>
+        <label>Speed:
+          <select id="speed">
+            <option value="50">Fast</option>
+            <option value="150" selected>Normal</option>
+            <option value="350">Slow</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="visual">
+      <div id="arrayContainer"></div>
+      <div id="message" class="message"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Built by Dasari Neha Vijetha — Algorithm Visualizer</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
